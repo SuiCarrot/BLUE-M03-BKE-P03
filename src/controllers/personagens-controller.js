@@ -32,13 +32,42 @@ const createPersonagemController = async (req, res) => {
 const updatePersonagemController = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
         returnres.satatus(400).send({ message: 'ID inválido!' });
-    }
+    };
 
     if (!( await personagensService.updatePersonagemController(req.params.id))) {
         return res.status(404).send({ message: 'Personagem não localizado!' });
     };
-}
 
+    if (
+        !req.body ||
+        !req.body.personagemName ||
+        !req.body.faction || 
+        !req.body.race || 
+        !req.body.img
+    ) {
+        return res.status(400).send({ message: 'Os campos não foram preenchidos corretamente!' });
+    };
 
+    res.send( await personagensService.updatePersonagemController(req.params.id));
+};
 
+const deletePersonagemController = async (req, res) => {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+        returnres.satatus(400).send({ message: 'ID inválido!' });
+    }; 
 
+    if (!( await personagensService.deletePersonagemController(req.params.id))) {
+        return res.status(404).send({ message: 'Personagem não localizado!' });
+    };
+
+    await personagensService.deletePersonagemController(req.params.id);
+    res.send({ message: 'Personagem deletado com sucesso!' });
+};
+
+module.exports = {
+    findPersonagensController,
+    findPersonagensByIdController,
+    createPersonagemController,
+    updatePersonagemController,
+    deletePersonagemController
+};
