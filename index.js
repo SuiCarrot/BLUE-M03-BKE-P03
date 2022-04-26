@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const route = require('./src/routes/tww.route.js');
+const route = require('./src/routes/route.js');
 const connectToDatabase = require('./src/database/database.js');
 
 const port = 3000;
