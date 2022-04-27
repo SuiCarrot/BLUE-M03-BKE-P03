@@ -6,9 +6,11 @@ const findUserController = async (req, res) => {
 
 const createUserController = async (req, res) => {
     if (!req.body || 
-        !req.body.user || 
-        !req.body.name ||
-        !req.body.imageUrl) {
+        !req.body.name || 
+        !req.body.username ||
+        !req.body.email ||
+        !req.body.password ||
+        !req.body.photo) {
             return res.status(400).send({ message: 'Os campos não foram preenchidos corretamente!' });
         }
 
