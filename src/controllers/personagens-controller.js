@@ -19,10 +19,9 @@ const findPersonagemByIdController = async (req, res) => {
 
 const createPersonagemController = async (req, res) => {
     if (!req.body || 
-        !req.body.personagemName || 
-        !req.body.faction || 
-        !req.body.race || 
-        !req.body.img) {
+        !req.body.user || 
+        !req.body.name ||
+        !req.body.imageUrl) {
             return res.status(400).send({ message: 'Os campos não foram preenchidos corretamente!' });
         }
 
@@ -39,11 +38,10 @@ const updatePersonagemController = async (req, res) => {
     };
 
     if (
-        !req.body ||
-        !req.body.personagemName ||
-        !req.body.faction || 
-        !req.body.race || 
-        !req.body.img
+        !req.body || 
+        !req.body.user || 
+        !req.body.name ||
+        !req.body.imageUrl
     ) {
         return res.status(400).send({ message: 'Os campos não foram preenchidos corretamente!' });
     };

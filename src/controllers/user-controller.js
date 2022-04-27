@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const userService = require('../services/user-service');
 
 const findUserController = async (req, res) => {
@@ -7,10 +6,9 @@ const findUserController = async (req, res) => {
 
 const createUserController = async (req, res) => {
     if (!req.body || 
-        !req.body.personagemName || 
-        !req.body.faction || 
-        !req.body.race || 
-        !req.body.img) {
+        !req.body.user || 
+        !req.body.name ||
+        !req.body.imageUrl) {
             return res.status(400).send({ message: 'Os campos não foram preenchidos corretamente!' });
         }
 
