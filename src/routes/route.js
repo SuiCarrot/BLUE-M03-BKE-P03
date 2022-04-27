@@ -8,23 +8,23 @@ const personagensController = require('../controllers/controller.js');
 
 
 //USER
-router.get('/users', userController.findUserController)
-router.post('/users/create', userController.createUserController)
+router.get('/users', userService.findUserController);
+router.post('/users/create', userService.createUserController);
 
 //AUTH
 router.post('auth/login', authController.findAuthLoginController)
 
 //PERSONAGENS
-router.get('/characters', personagensController.findPersonagensController);
+router.get('/characters', personagensService.findPersonagensController);
 
-router.post('/characters/create', personagensController.createPersonagemController);
+router.post('/characters/create', personagensService.createPersonagemController);
 
-router.get('/characters/find/:id', personagensController.findPersonagemByIdController);
+router.get('/characters/find/:id', personagensService.findPersonagemByIdController);
 
-router.put('/characters/update/:id', personagensController.updatePersonagemController);
+router.put('/characters/update/:id', personagensService.updatePersonagemController);
 
-router.delete('characters/delete/:id', personagensController.deletePersonagemController);
+router.delete('characters/delete/:id', personagensService.deletePersonagemController);
 
-router.get('/characters/search', personagensController.findPersonagemByNameController);
+router.get('/characters/search', personagensService.findPersonagemByNameController);
 
 module.exports = router

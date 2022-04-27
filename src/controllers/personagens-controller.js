@@ -5,16 +5,16 @@ const findPersonagensController = async (req, res) => {
     res.send( await personagensService.findPersonagensController());
 };
 
-const findPersonagensByIdController = async (req, res) => {
+const findPersonagemByIdController = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
         return res.status(400).send({ message: 'ID inválido' });
     };
 
-    if (!( await personagensService.findPersonagensByIdController(req.params.id))) {
+    if (!( await personagensService.findPersonagemByIdController(req.params.id))) {
         return res.status(404).sen({ message: 'Personagem não localizado!' });
     };
 
-    res.send( await personagensService.findPersonagensByIdController(req.params.id));
+    res.send( await personagensService.findPersonagemByIdController(req.params.id));
 };
 
 const createPersonagemController = async (req, res) => {
@@ -64,9 +64,11 @@ const deletePersonagemController = async (req, res) => {
     res.send({ message: 'Personagem deletado com sucesso!' });
 };
 
+
+
 module.exports = {
     findPersonagensController,
-    findPersonagensByIdController,
+    findPersonagemByIdController,
     createPersonagemController,
     updatePersonagemController,
     deletePersonagemController
