@@ -16,3 +16,8 @@ const createUserController = async (req, res) => {
 
         res.send( await userService.createUserController(req.body));
 };
+
+module.exports = {
+    findUserController,
+    createUserController
+};
