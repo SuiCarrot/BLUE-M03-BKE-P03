@@ -21,8 +21,8 @@ const deletePersonagemService = async (id) => {
 };
 
 //ver com a Duda
-const findPersonagemByNameService = async () => {
-    return await Personagem.findOne();
+const findPersonagemByNameService = async (search) => {
+    return await Personagem.find(search);
 }
 
 module.exports ={
@@ -32,4 +32,5 @@ module.exports ={
     updatePersonagemService,
     deletePersonagemService,
     findPersonagemByIdService,
+    findPersonagemByNameService,
 }
