@@ -64,9 +64,11 @@ const deletePersonagemController = async (req, res) => {
     res.send({ message: 'Personagem deletado com sucesso!' });
 };
 
+
+
 module.exports = {
     findPersonagensController,
-    findPersonagensByIdController,
+    findPersonagemByIdController,
     createPersonagemController,
     updatePersonagemController,
     deletePersonagemController
