@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const personagensService = require('../services/personagens-services');
+const personagensService = require('../services/personagens-service.js');
 
 const findPersonagensController = async (req, res) => {
     res.send( await personagensService.findPersonagensController());

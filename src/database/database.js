@@ -1,6 +1,8 @@
+const mongoose = require('mongoose');
+
 function connectToDatabase() {
     mongoose
-      .connect('mongodb://localhost:27017/personagens-db', {
+      .connect('mongodb+srv://Bruno123:blue123@api-rickandmorty.pbiml.mongodb.net/api-rickAndMorty?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       })
