@@ -1,10 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
-
-
 const personagensController = require('../controllers/personagens-controller');
-
 
 //PERSONAGENS
 router.get('/characters', personagensController.findPersonagensController);
