@@ -30,8 +30,7 @@ const createPersonagemController = async (req, res) => {
 
 const updatePersonagemController = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-        res.status(400).send({ message: 'ID inválido!' });
-        return;        
+        return res.status(400).send({ message: 'ID inválido!' });        
     };
 
     if (!( await personagensService.updatePersonagemService(req.params.id))) {
@@ -47,7 +46,7 @@ const updatePersonagemController = async (req, res) => {
         return res.status(400).send({ message: 'Os campos não foram preenchidos corretamente!' });
     };
 
-    res.send( await personagensService.updatePersonagemService(req.params.id));
+    res.send( await personagensService.updatePersonagemService(req.params.id, req.body));
 };
 
 const deletePersonagemController = async (req, res) => {

@@ -11,7 +11,7 @@ router.get('/characters/find/:id', personagensController.findPersonagemByIdContr
 
 router.put('/characters/update/:id', personagensController.updatePersonagemController);
 
-router.delete('characters/delete/:id', personagensController.deletePersonagemController);
+router.delete('/characters/delete/:id', personagensController.deletePersonagemController);
 
 
 module.exports = router
