@@ -1,7 +1,7 @@
 # RICK AND MORTY
 
 
-Backend de Rick and Morty criado em Javascript e Express. 
+Backend de Rick and Morty criado em Javascript, Express, Nodemon and MongoDB.
 Funcionalidades:
 
 - Lista de personagens cadastrados no banco de dados;
