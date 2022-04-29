@@ -5,7 +5,7 @@ Backend de Rick and Morty criado em Javascript, Express, Nodemon and MongoDB.
 Funcionalidades:
 
 - Lista de personagens cadastrados no banco de dados;
-- Cadastrado de novos personagens;
+- Cadastro de novos personagens;
 - Update de personagens;
 - Delete de personagens.
 
